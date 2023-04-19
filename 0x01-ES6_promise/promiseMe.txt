@@ -1,0 +1,27 @@
+/**
+ * Promise constructor takes one argument, a callback function
+ * Callback function takes two arguments, a resolve and reject
+ */
+// var promise;    //create variable
+// promise = new Promise( function( resolve, reject ) {
+//     //do a thing, possibly asyncronuous
+    
+//     if( "if everything turned out fine" ){
+//         resolve( "Stuff works" );
+//     }
+//     else {
+//         reject( Error("It broke") );
+//     }
+// } );
+
+
+//using Promises
+var promiz = new Promise( function( resolve, reject ){
+    resolve(JSON.parse({"something":"This is a JSON"}));
+} );
+
+promiz.then( function(val){
+    console.log("Success", val);
+} ).catch( function(err){
+    console.log("It failed", err);
+} );
