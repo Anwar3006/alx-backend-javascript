@@ -32,7 +32,7 @@ export default class HolbertonCourse {
   get students() { return this._students; }
 
   set students(newStudents) {
-    if (typeof (newStudents) === 'object') {
+    if ( typeof(newStudents) === 'object') {
       this._students = newStudents;
     } else if (newStudents === '') {
       throw new Error('Array can not be empty');
