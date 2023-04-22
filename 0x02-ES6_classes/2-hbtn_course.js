@@ -11,7 +11,7 @@ export default class HolbertonCourse {
     if (typeof (newName) === 'string') {
       this._name = newName;
     } else if (newName === '') {
-      throw new Error('Length can not be empty');
+      throw new Error('Name can not be empty');
     } else {
       throw new TypeError('Name must be a string');
     }
@@ -31,13 +31,13 @@ export default class HolbertonCourse {
 
   get students() { return this._students; }
 
-  set students(newStudents) {
-    if ( typeof(newStudents) === 'object') {
-      this._students = newStudents;
-    } else if (newStudents === '') {
-      throw new Error('Array can not be empty');
-    } else {
-      throw new TypeError('Entry must be a string array');
+  set students(value) {
+    if (!(value instanceof Array)) {
+      throw new TypeError('Students must be an array of strings');
     }
+    if (!value.every((student) => typeof student === 'string')) {
+      throw new TypeError('Students must be an array of strings');
+    }
+    this._students = value;
   }
 }
