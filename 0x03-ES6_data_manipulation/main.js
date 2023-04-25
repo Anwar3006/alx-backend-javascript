@@ -1,4 +1,8 @@
-import getListStudents from "./0-get_list_students.js";
-import updateStudentGradeByCity from "./4-update_grade_by_city.js";
+import updateUniqueItems from './10-update_uniq_items.js';
+import groceriesList from './9-groceries_list.js';
 
-console.log(updateStudentGradeByCity(getListStudents(), "San Francisco", [{ studentId: 5, grade: 97 }, { studentId: 1, grade: 86 }]));
+const map = groceriesList();
+console.log(map);
+
+updateUniqueItems(map);
+console.log(map);
