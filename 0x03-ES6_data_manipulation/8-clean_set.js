@@ -1,4 +1,4 @@
-export default function cleanSet(mySet, startString) {
+export default function cleanSet(set, startString) {
   // mySet has values that begin with startString
   // remove the occurrence of startString from all values
   // create a string with the updated values separated by -
