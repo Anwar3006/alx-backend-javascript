@@ -3,16 +3,15 @@ export default function cleanSet(mySet, startString) {
   // remove the occurrence of startString from all values
   // create a string with the updated values separated by -
   if (typeof startString === 'string') {
-    let myStr = '';
+    let myStr = [];
     mySet.forEach((value) => {
       if (value.startsWith(startString)) {
         const slen = startString.length;
-        myStr += `${value.slice(slen, value.length)}-`;
+        element = `${value.slice(slen, value.length)}`;
+        myStr.push(element);
       }
     });
-    myStr = myStr.substring(0, myStr.length - 1);
-    return myStr;
-  }else{
-    return '';
+    return myStr.join('-');
   }
+  return '';
 }
